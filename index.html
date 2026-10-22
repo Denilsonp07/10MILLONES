@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura y Polanco</title>
+
+    <div class="flex flex-col items-center justify-center my-6">
+        <p class="text-gray-500 italic mb-3" style="font-family: 'Playfair Display', serif;">
+            Dale play para ambientar la lectura ✨
+        </p>
+        <audio controls loop>
+            <source src="Justin Bieber - One Less Lonely Girl.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#fdfbf7', 
+                        'soft-bg': '#f3eee8' 
+                    },
+                    fontFamily: {
+                        'cursive': ['"Dancing Script"', 'cursive'],
+                        'serif': ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Textura sutil para dar efecto de papel */
+        .paper-texture {
+            background-color: #fdfbf7;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        /* Estilos para el efecto Polaroid */
+        .polaroid {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        /* Máscara y estilos para el collage en forma de corazón */
+        .heart-collage {
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E");
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E");
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+        
+        .collage-img {
+            transition: transform 0.5s ease;
+        }
+        .collage-img:hover {
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+<body class="bg-soft-bg min-h-screen text-gray-800 font-serif antialiased py-12 px-4 sm:px-6 lg:px-8 selection:bg-rose-200">
+
+    <div class="max-w-4xl mx-auto">
+        
+        <!-- Header -->
+        <header class="text-center mb-12 animate-fade-in-down">
+            <h1 class="font-cursive text-5xl md:text-7xl text-rose-800 mb-4 drop-shadow-sm">Laura y Polanco</h1>
+            <p class="italic text-gray-500 text-lg">Una historia en palabras e imágenes</p>
+        </header>
+
+        <!-- Sección de la Carta -->
+        <main>
+            <section class="paper-texture rounded-sm shadow-2xl p-8 md:p-16 mb-16 mx-auto max-w-3xl relative">
+                <!-- Adorno esquinero opcional -->
+                <div class="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-rose-300 opacity-50"></div>
+                <div class="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-rose-300 opacity-50"></div>
+
+                <h2 class="text-3xl font-semibold mb-6 text-center text-gray-700">Para mi persona favorita,</h2>
+                
+                <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                    <p>
+                        He querido escribirte esta carta para recordarte lo especial que eres para mí. 
+                        A veces las palabras se las lleva el viento, pero al dejarlas escritas aquí, 
+                        espero que perduren para siempre, igual que los momentos que hemos compartido.
+                    </p>
+                    <p>
+                        Cada risa, cada viaje y cada tarde tranquila a tu lado se han convertido en 
+                        mis recuerdos más preciados. No necesito una fecha especial para celebrar lo 
+                        nuestro, porque cada día contigo es un regalo.
+                    </p>
+                    <p>
+                        Gracias por ser mi refugio, mi compañero/a de aventuras y mi mayor motivación. 
+                        Espero que al leer estas palabras sientas el mismo abrazo cálido que me da tu 
+                        presencia.
+                    </p>
+                </div>
+
+                <div class="mt-12 text-right">
+                    <p class="font-cursive text-4xl text-rose-700">Con todo mi amor,</p>
+                    <p class="mt-2 text-xl italic text-gray-500">Siempre tuyo/a.</p>
+                </div>
+            </section>
+
+            <!-- Sección de Galería de Fotos (Collage Corazón) -->
+            <section class="mt-20 px-4">
+                <h3 class="font-cursive text-5xl text-center text-rose-800 mb-12 drop-shadow-sm">Nuestro Corazón</h3>
+                
+                <!-- Contenedor con forma de corazón -->
+                <div class="max-w-2xl mx-auto heart-collage bg-rose-200 aspect-square overflow-hidden grid grid-cols-4 grid-rows-4 gap-1.5 p-1 cursor-pointer shadow-xl">
+                    
+                    <!-- Fila 1 y 2 -->
+                    <!-- Bloque grande superior izquierdo -->
+                    <div class="col-span-2 row-span-2 overflow-hidden relative">
+                        <img src="Gemini_Generated_Image_5qvamo5qvamo5qva.jpg" alt="Foto 1" class="w-full h-full object-cover collage-img">
+                    </div>
+                    <!-- Bloques pequeños derecha -->
+                    <div class="overflow-hidden relative"><img src="WhatsApp Image 2026-10-21 at 19.03.02.jpeg" alt="Foto 2" class="w-full h-full object-cover collage-img"></div>
+                    <div class="overflow-hidden relative"><img src="WhatsApp Image 2026-10-21 at 19.03.03.jpeg" alt="Foto 3" class="w-full h-full object-cover collage-img"></div>
+                    
+                    <!-- Bloque horizontal derecha -->
+                    <div class="col-span-2 overflow-hidden relative"><img src="WhatsApp Image 2026-10-21 at 19.03.03 (1).jpeg" alt="Foto 4" class="w-full h-full object-cover collage-img"></div>
+                    
+                    <!-- Fila 3 y 4 -->
+                    <!-- Bloque pequeño inferior izquierdo -->
+                    <div class="overflow-hidden relative"><img src="WhatsApp Image 2026-10-21 at 19.03.03 (3).jpeg" alt="Foto 5" class="w-full h-full object-cover collage-img"></div>
+                    
+                    <!-- Bloque grande central-inferior -->
+                    <div class="col-span-2 row-span-2 overflow-hidden relative">
+                        <img src="WhatsApp Image 2026-10-21 at 19.03.06.jpeg" alt="Foto 6" class="w-full h-full object-cover collage-img">
+                    </div>
+                    
+                    <!-- Bloque pequeño derecha -->
+                    <div class="overflow-hidden relative"><img src="WhatsApp Image 2026-10-21 at 19.03.06 (1).jpeg" alt="Foto 7" class="w-full h-full object-cover collage-img"></div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-24 text-center text-gray-400 text-sm pb-8">
+            <p>Hecho con ♥ para Laura y Polanco</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
